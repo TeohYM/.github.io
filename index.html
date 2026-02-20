@@ -1,215 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Resume of Teoh Yen Ming</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume | Teoh Yen Ming</title>
+
 <style>
-/* Reset */
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial;
-  min-height:100vh;
-  line-height:1.6;
-  background: linear-gradient(135deg, #eaf6ff, #dfeeff);
-  color:#222;
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Header */
-.header {
-  text-align:center;
-  padding:3rem 1rem 2rem;
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial;
+  background: linear-gradient(135deg, #eaf6ff, #dfeeff);
+  min-height: 100vh;
+  line-height: 1.6;
+  color: #222;
 }
+
+/* ===== Header ===== */
+.header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
 .avatar {
   width: clamp(120px, 18vw, 160px);
-  aspect-ratio:1;
-  margin:0 auto 1rem;
-  border-radius:50%;
-  overflow:hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  aspect-ratio: 1;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
-.avatar img { width:100%; height:100%; object-fit:cover;   object-position: 50% 10%;transition:transform .35s ease; }
-.avatar:hover img { transform:scale(1.06); }
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 10%;
+  transition: transform .35s ease;
+}
+
+.avatar:hover img {
+  transform: scale(1.05);
+}
 
 .name {
-  font-size: clamp(2rem, 6vw, 3.2rem);
-  font-weight:700;
-  letter-spacing:1.5px;
-  white-space:nowrap; /* 姓名永遠一行 */
-  margin-bottom:0.6rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 1rem;
 }
 
-/* Contact row with icons */
+/* ===== Contact ===== */
 .contact-row {
-  display:flex;
-  margin:0 auto;
-  min-width: 65vw;
-  width:auto;
-  max-width:95vw;
-  gap:1rem;
-  align-items:center;
-  font-size:0.95rem;
-  color:rgba(0,0,0,0.75);
-  background: rgba(255,255,255,0.6);
-  padding:6px 10px;
-  border-radius:999px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin: 0 auto;
+  padding: .6rem 1rem;
+  background: rgba(255,255,255,0.7);
+  border-radius: 999px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 4px 14px rgba(3,86,252,0.06);
-  white-space:nowrap;
-  margin:5px 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-/* link styling */
 .contact-link {
-  display:inline-flex;
-  gap:8px;
-  align-items:center;
-  text-decoration:none;
-  color:inherit;
-  padding:6px 8px;
-  border-radius:8px;
-  transition: transform .18s ease, color .18s ease;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  text-decoration: none;
+  color: #0356fc;
+  font-size: .95rem;
+  transition: transform .2s ease, color .2s ease;
 }
-.contact-link:focus { outline: 3px solid rgba(3,86,252,0.18); outline-offset:2px; }
 
-/* svg icon */
+.contact-link:hover {
+  transform: translateY(-2px);
+  color: #023bb8;
+}
+
 .icon {
-  width:18px;
-  height:18px;
-  display:inline-block;
-  transition: transform .18s ease, fill .18s ease, stroke .18s ease;
-  flex-shrink:0;
-  color:#0356fc;
+  width: 18px;
+  height: 18px;
   stroke: currentColor;
   fill: none;
 }
 
-/* hover */
-.contact-link:hover .icon,
-.contact-link:focus .icon {
-  transform: translateY(-3px) scale(1.06);
-  color:#023bb8;
-}
-.contact-link:hover { color:#023bb8; }
-
-/* Layout cards */
+/* ===== Layout ===== */
 .container {
-  width:95%;
-  max-width:1100px;
-  margin:2rem auto 4rem;
-  display:flex;
-  flex-wrap:wrap;
-  gap:1.6rem;
-  justify-content:center;
+  width: 95%;
+  max-width: 1100px;
+  margin: 2.5rem auto 4rem;
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
+
+/* ===== Card ===== */
 .card {
-  flex:1 1 320px;
-  max-width:480px;
-  background:white;
-  padding:1.6rem;
-  border-radius:14px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.08);
-  transition: transform .28s ease, box-shadow .28s ease;
+  background: white;
+  padding: 1.6rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
-.card:hover { transform: translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,0.12); }
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
 .card h2 {
-  font-size:1.05rem; font-weight:600; margin-bottom:0.9rem;
-  position:relative; padding-left:12px;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  padding-left: 12px;
+  position: relative;
 }
+
 .card h2::before {
-  content:""; position:absolute; left:0; top:6px; height:68%; width:4px; background:#0356fc; border-radius:2px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 4px;
+  height: 70%;
+  background: #0356fc;
+  border-radius: 2px;
   transition: height .25s ease;
 }
-.card:hover h2::before { height:100%; }
 
-.skills-list { list-style:none; padding-left:0; margin-top:0.4rem; }
-.skills-list li {
-  display:inline-block; background:#e7f2ff; color:#0356fc; padding:6px 12px; border-radius:999px; margin:6px 8px 0 0;
-  font-size:0.88rem; transition: transform .18s ease, background .18s ease, color .18s ease;
+.card:hover h2::before {
+  height: 100%;
 }
-.skills-list li:hover { transform: translateY(-3px); background:#0356fc; color:#fff; cursor:default; }
 
+/* ===== Lists ===== */
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.skills-list li {
+  background: #e7f2ff;
+  color: #0356fc;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  transition: .2s ease;
+}
+
+.skills-list li:hover {
+  background: #0356fc;
+  color: white;
+}
+
+.card ul:not(.skills-list) {
+  padding-left: 1.2rem;
+}
+
+/* ===== Certificate Links ===== */
 .cert-link {
-  display:inline-block;
-  margin-top:6px;
-  color:#0356fc;
-  text-decoration:none;
-  font-size:0.9rem;
+  display: inline-block;
+  margin-top: .5rem;
+  font-size: .9rem;
+  color: #0356fc;
+  text-decoration: none;
   transition: transform .2s ease, color .2s ease;
 }
 
 .cert-link:hover {
   transform: translateY(-2px);
-  color:#023bb8;
+  color: #023bb8;
 }
 
-
-/* small screens */
-@media (max-width: 768px) {
-  .container { gap:1rem; }
-  .contact-row { font-size:0.92rem; padding:5px 8px; }
+.section-gap {
+  margin-top: 1rem;
 }
+
 </style>
 </head>
+
 <body>
 
 <div class="header">
-  <div class="avatar" aria-hidden="true">
+  <div class="avatar">
     <img src="Profile Picture.png" alt="Teoh Yen Ming">
   </div>
 
-  <div class="name" aria-label="Full name">TEOH YEN MING</div>
+  <div class="name">TEOH YEN MING</div>
 
-  <!-- Contact: tel + mail with inline SVGs -->
-  <div class="contact-row" role="group" aria-label="Contact information">
-    <!-- Phone link -->
-    <a class="contact-link" href="tel:+60168360177" aria-label="Call 016 836 0177" rel="noopener noreferrer"
->
-      <!-- phone SVG (stroke-based, uses currentColor) -->
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <div class="contact-row">
+    <a class="contact-link" href="tel:+60168360177">
+      <svg class="icon" viewBox="0 0 24 24">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.26 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.36 1.76.7 2.57a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.28-2.28a2 2 0 0 1 2.11-.45c.82.34 1.67.58 2.57.7A2 2 0 0 1 22 16.92z" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span>016-8360177</span>
+      016-8360177
     </a>
-|
-    <!-- Mail link -->
-    <a class="contact-link" href="mailto:yenming.teoh@gmail.com" aria-label="Email yenming dot teoh at gmail dot com" rel="noopener noreferrer"
->
-      <!-- mail SVG -->
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+
+    <a class="contact-link" href="mailto:yenming.teoh@gmail.com">
+      <svg class="icon" viewBox="0 0 24 24">
         <path d="M4 4h16c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         <polyline points="22,6 12,13 2,6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span>yenming.teoh@gmail.com</span>
+      yenming.teoh@gmail.com
     </a>
   </div>
 </div>
 
-<!-- Content cards -->
 <div class="container">
-  <section class="card" aria-labelledby="edu">
-    <h2 id="edu">Education</h2>
+
+  <section class="card">
+    <h2>Education</h2>
     <p><strong>2020–2025</strong></p>
     <p>PIN HWA HIGH SCHOOL</p>
     <p><strong>UEC 8A’s</strong></p>
   </section>
 
-  <section class="card" aria-labelledby="skills">
-    <h2 id="skills">Skills</h2>
-    <ul class="skills-list" aria-hidden="false">
+  <section class="card">
+    <h2>Skills</h2>
+    <ul class="skills-list">
       <li>Microsoft PowerPoint</li>
       <li>Microsoft Word</li>
       <li>Microsoft Excel</li>
       <li>Basic Python</li>
       <li>Basic HTML & CSS</li>
       <li>Time Management</li>
-      
     </ul>
   </section>
 
-  <section class="card" aria-labelledby="lang">
-    <h2 id="lang">Languages</h2>
-    <ul style="padding-left:1.5rem;">
+  <section class="card">
+    <h2>Languages</h2>
+    <ul>
       <li>Chinese (Native)</li>
       <li>English (Intermediate)</li>
       <li>Malay (Intermediate)</li>
@@ -217,51 +245,48 @@ body {
     </ul>
   </section>
 
-  <section class="card" aria-labelledby="exp">
-    <h2 id="exp">Experience</h2>
+  <section class="card">
+    <h2>Experience</h2>
 
     <p><strong>Class General Affairs Officer (2025)</strong></p>
-    <ul style="padding-left:1.5rem;">
+    <ul>
       <li>Coordinated venue bookings and facility management with school administration.</li>
     </ul>
 
-    <p style="margin-top:0.8rem;"><strong>Club General Affairs Officer (2023)</strong></p>
-    <ul style="padding-left:1.5rem;">
-      <li>Maintained venue security and cleanliness through regular inspection.</li>
+    <div class="section-gap">
+      <p><strong>Club General Affairs Officer (2023)</strong></p>
+      <ul>
+        <li>Maintained venue security and cleanliness through regular inspection.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Achievement</h2>
+
+    <p><strong>National Hackathon Competition 2025</strong></p>
+    <ul>
+      <li>Third Runner-up</li>
     </ul>
+
+    <a href="hackathon_cert.pdf" target="_blank" class="cert-link">View Certificate</a>
+
+    <div class="section-gap">
+      <p><strong>Other Certificates</strong></p>
+      <a href="HTML&CSS Cert.pdf" target="_blank" class="cert-link">HTML & CSS Certificate</a><br>
+      <a href="Excel Cert.pdf" target="_blank" class="cert-link">Excel Certificate</a>
+    </div>
   </section>
 
-
-  <section class="card" aria-labelledby="ach">
-  <h2 id="ach">Achievement</h2>
-
-  <p><strong>National Hackathon Competition 2025</strong></p>
-  <ul style="padding-left:1.5rem;"><li>Third Runner-up</li></ul>
-
-  <p>
-    <a href="hackathon_cert.pdf" target="_blank" class="cert-link" rel="noopener noreferrer"
->
-      View Certificate
-    </a>
-  </p>
-<p style="margin-top:0.6rem;"></p>
-<strong>Other Certificates</strong><br>
-<a href="HTML&CSS Cert.pdf" target="_blank" class="cert-link" rel="noopener noreferrer"
->
-HTML & CSS Certificate
-</a><br>
-<a href="Excel Cert.pdf" target="_blank" class="cert-link" rel="noopener noreferrer"
->
-Excel Certificate
-</a>
-</section>
-
-  <section class="card" aria-labelledby="summary">
-    <h2 id="summary">Profile Summary</h2>
-    <p>Motivated and reliable graduate with strong responsibility and work ethic. Quick learner with positive attitude and consistent extracurricular participation.</p>
+  <section class="card">
+    <h2>Profile Summary</h2>
+    <p>
+      Motivated and reliable graduate with strong responsibility and work ethic.
+      Quick learner with positive attitude and consistent extracurricular participation.
+    </p>
   </section>
+
 </div>
 
 </body>
 </html>
-
